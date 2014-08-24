@@ -1,0 +1,38 @@
+<div ng-controller="InvoiceCntl">            
+	<b>Invoice:</b>            
+	<br>            
+	<br>            
+	<table>                 
+		<tr><td>Quantity</td><td>Cost</td></tr>
+		<tr>                     
+			<td><input type="integer" min="0" ng-model="qty" required ></td>                    
+			<td><input type="number" ng-model="cost" required ></td>                
+		</tr>            
+	</table>            
+	<hr>             
+	<b>Total:</b>
+	{{
+	qty * cost | currency;
+	}}       
+</div>
+
+<span draggable>Drag ME</span>
+<div draggable>
+	<div ng-init="list = ['Chrome', 'Safari', 'Firefox', 'IE'] ">
+	  Number formatting: {{ 1234567890 | number }} <br>      
+	  array filtering <input ng-model="predicate">
+	  {{ list | filter:predicate | json }}    
+	</div>
+	<div ng-controller="ClockCtrl">
+		Current time is: {{ time.now }}    
+	</div>
+</div>
+
+<div ui-sortable ng-model="todos">
+  <div class="input-group" ng-repeat="todo in todos" style="padding:5px 10px; cursor: move;">
+    <input type="text" ng-model="todo" class="form-control">
+    <span class="input-group-btn">
+      <button class="btn btn-danger" ng-click="removeTodo($index)" aria-label="Remove">X</button>
+    </span>
+  </div>
+</div>
