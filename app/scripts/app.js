@@ -16,6 +16,7 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
+    'ngTableRenderer',
 	'ui.sortable'
   ])
   .config(function ($routeProvider) {

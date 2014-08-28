@@ -8,10 +8,26 @@
  * Controller of the ngappApp
  */
 angular.module('ngappApp')
-  .controller('MainCtrl', function ($scope) {
-	$scope.todos = ['Item 1', 'Item 2', 'Item 3'];
-  })
-  .controller('InvoiceCntl', ['$scope', function ($scope) {    
-	$scope.qty = 1;     
-	$scope.cost = 19.95;
-  }]);
+  .controller('MainCtrl', function ($scope, $filter, ngTableParams) {
+    var todos = [];
+    for(var i=0; i < 100; i++){
+        todos.push( {name : 'Item '+ i, version : i + ".0"});
+    }
+    $scope.todos = todos;
+    $scope.contentHeight = "400px";
+    $scope.todosTableParams = new ngTableParams(
+        {
+            page:1, // first page number
+            count:20, // count per page
+            sorting: {
+                name:'asc'     // initial sorting
+            }
+        },
+        {
+            total: todos.length,
+            getData: function($defer , params){
+                $defer.resolve(todos.slice((params.page() - 1) * params.count(), params.page() * params.count()));
+            }
+        }
+    );
+  });

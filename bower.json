@@ -13,6 +13,7 @@
     "angular-touch": "1.2.16",
     "angular-route": "1.2.16",
     "angular-ui-sortable": "~0.12.10",
+    "ng-table-extend": "*",
     "jquery-ui": "~1.11.1"
   },
   "devDependencies": {
