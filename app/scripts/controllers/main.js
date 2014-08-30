@@ -14,7 +14,7 @@ angular.module('ngappApp')
         todos.push( {name : 'Item '+ i, version : i + ".0"});
     }
     $scope.todos = todos;
-    $scope.contentHeight = "400px";
+    $scope.contentHeight = "500px";
     $scope.todosTableParams = new ngTableParams(
         {
             page:1, // first page number

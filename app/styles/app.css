@@ -3,6 +3,5 @@
 }
 
 .ngTableRenderer .headerDiv {
-    overflow-y: scroll;
     height: 36px;
 }
