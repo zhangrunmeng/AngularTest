@@ -30,7 +30,6 @@ angular.module('ngTableRenderer', ['ngTable'])
                 });
                 var func = function(){
                     var ngtable = element.find("table[id!='table-header']");
-                    //headtable.attr('style', ngtable.attr('style'));
                     var columnes = angular.element(ngtable.find('tr')[0]).find('td');
                     if(scope.columns && scope.columns.length == columnes.length){
                         angular.forEach(columnes, function(td, idx){
@@ -53,6 +52,9 @@ angular.module('ngTableRenderer', ['ngTable'])
                                 col.css({
                                     width : columnes[idx].width + "px"
                                 });
+                                if(!th.text()){
+                                    th.text(" ");
+                                }
                             }
                         });
                     }

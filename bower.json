@@ -14,7 +14,8 @@
     "angular-route": "1.2.16",
     "angular-ui-sortable": "~0.12.10",
     "ng-table-extend": "*",
-    "jquery-ui": "~1.11.1"
+    "jquery-ui": "~1.11.1",
+    "angular-grid": "~2.0.12"
   },
   "devDependencies": {
     "angular-mocks": "1.2.16",

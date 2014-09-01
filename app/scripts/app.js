@@ -1,5 +1,8 @@
 'use strict';
 
+var modules = [
+]
+
 /**
  * @ngdoc overview
  * @name ngappApp
@@ -16,9 +19,10 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
+    'ngGrid',
     'ngTableRenderer',
 	'ui.sortable'
-  ])
+    ].concat(modules))
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
